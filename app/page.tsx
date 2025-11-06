@@ -57,7 +57,7 @@ export default function Home() {
           <div className="bg-[#002BBA] text-[#FBFBFB] py-5">
             <div className="w-full p-10 flex items-center justify-between">
               <h1 className="text-6xl font-serif tracking-tight">
-                Selected work <sup>8</sup>
+                Selected work <sup>03</sup>
               </h1>
               <p className="w-1/4 text-2xl tracking-tighter">
                 We helped more than 70+ brands, start-ups and agencies to level
@@ -169,6 +169,75 @@ export default function Home() {
                 reliable experience that keeps your brand at the top of its
                 game.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div>
+          <hr />
+          <div className="overflow-hidden">
+            <div className="w-full h-full">
+              <Image
+                width={2800}
+                height={525}
+                src={"/maykls.svg"}
+                alt=""
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <hr />
+          <div className="overflow-hidden">
+            <div className="w-full h-full">
+              <Image
+                width={2800}
+                height={525}
+                src={"/studio.svg"}
+                alt=""
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <hr />
+        </div>
+      </section>
+      <section>
+        <div>
+          <div>
+            <h1>About US</h1>
+          </div>
+          <div className="relative">
+            <div className="w-full h-screen">
+              <Image
+                src={"/about.avif"}
+                alt=""
+                width={1980}
+                height={1080}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="w-full h-full flex items-end justify-end absolute top-0 left-0 p-10">
+              <div className="w-full border-t border-[#FBFBFB] flex items-start justify-between pt-5">
+                <div>
+                  <h1 className="text-[#FBFBFB] text-6xl  tracking-tight">
+                    <span className="font-snas italic">
+                      Were
+                    </span>{" "}
+                    <span className="font-serif">maykls</span>.studio
+                  </h1>
+                </div>
+                <div className="w-[40%]">
+                  <p className="text-[#FBFBFB] text-3xl font-medium tracking-tight">
+                    <span className="pl-20">A</span> creative boutique studio
+                    crafting exceptional
+                    <span className="font-serif italic"> websites</span> with sharp
+                    messaging, award-winning design, and smooth animations. All
+                    delivered with the precision, passion, and dedication of a
+                    Grand Slam Tennis match.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
