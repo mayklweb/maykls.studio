@@ -17,35 +17,43 @@ export default function Home() {
           <h1 className="text-white text-5xl font-bold">Build your website</h1>
         </div>
       </section>
-      <section className="">
-        <div className="p-10 flex">
-          <div className="w-1/2 flex items-start justify-between">
-            <div className="w-2/3 flex justify-between items-center">
-              <h1 className="text-6xl font-serif">Mission</h1>
-              <p className="text-sm tracking-tight">
+
+      <section>
+        <div className="p-5 lg:p-10 grid grid-cols-1 lg:grid-cols-2">
+          <div className="w-2/3 flex items-start">
+            <div className="w-full flex items-center justify-between">
+              <h1 className="text-5xl lg:text-6xl font-serif font-semibold">
+                Mission
+              </h1>
+              <p className="text-sm tracking-tight hidden lg:block">
                 What is
                 <br />
                 <span className="font-serif">maykls</span>.studio ?
               </p>
             </div>
           </div>
-
-          <div className="w-1/2">
-            <p className="w-3/4 text-3xl tracking-tight font-medium">
-              At <span className="font-serif tracking-tight">maykls</span>.
-              <span className="font-sans tracking-tighter">studio</span>, we’re
-              on the mission to create websites and brand design that spark
-              excitement – just like a Grand Slam Tennis match. Partnering with
-              exceptional brands that share our ambition for good design. It’s
-              not just about your{" "}
-              <span className="font-serif tracking-tight italic"> website</span>
-              . It’s about game, set, and match for your brand.
-            </p>
+          <div className="flex items-center justify-end">
+            <div className="lg:w-4/5 mt-5">
+              <p className="text-2xl lg:text-3xl tracking-tight font-medium leading-[110%] lg:leading-[130%] text-justify">
+                <span className="lg:pl-20">At </span>
+                <span className="font-serif tracking-tight">maykls</span>.
+                <span className="font-sans tracking-tighter">studio</span>,
+                we’re on the mission to create websites and brand design that
+                spark excitement – just like a Grand Slam Tennis match.
+                Partnering with exceptional brands that share our ambition for
+                good design. It’s not just about your
+                <span className="font-serif tracking-tight italic">
+                  website
+                </span>
+                . It’s about game, set, and match for your brand.
+              </p>
+            </div>
           </div>
         </div>
       </section>
+
       <section>
-        <div className="relative">
+        <div className="relative hidden">
           <div>
             <Image
               width={1400}
@@ -101,11 +109,17 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section>
-        <div className="py-20 px-10">
-          <div>
-            <p className="text-5xl font-medium tracking-tighter leading-[120%]">
-              <span className="pl-[10%]">From </span>
+        <div className="px-5 lg:px-10">
+          <div className="lg:hidden ">
+            <h1 className="text-5xl lg:text-6xl font-serif font-semibold">
+              Process
+            </h1>
+          </div>
+          <div className="mt-5">
+            <p className="text-2xl lg:text-5xl font-medium tracking-tight leading-[110%] lg:leading-[130%] text-justify">
+              <span className="lg:pl-40">From </span>
               baseline to breakthrough. Our process follows a straight game
               plan. Starting with clear{" "}
               <span className="font-serif italic tracking-tight">strategy</span>
@@ -120,7 +134,7 @@ export default function Home() {
               impact.
             </p>
           </div>
-          <div className="mt-40 grid grid-cols-3 gap-16">
+          <div className="mt-40 grid grid-cols-1 lg:grid-cols-3 gap-16">
             <div className="border-t border-[#002BBA]">
               <div className="flex items-center justify-between py-5">
                 <div>
@@ -174,6 +188,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section>
         <div>
           <hr />
@@ -203,10 +218,11 @@ export default function Home() {
           <hr />
         </div>
       </section>
+
       <section>
         <div>
           <div>
-            <h1>About US</h1>
+            <h1>About</h1>
           </div>
           <div className="relative">
             <div className="w-full h-screen">
@@ -226,7 +242,7 @@ export default function Home() {
                     <span className="font-serif">maykls</span>.studio
                   </h1>
                 </div>
-                <div className="w-[40%]">
+                <div className="lg:w-[40%] hidden">
                   <p className="text-[#FBFBFB] text-3xl font-medium tracking-tight">
                     <span className="pl-20">A</span> creative boutique studio
                     crafting exceptional
@@ -241,16 +257,21 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section>
         <div className="w-full h-screen p-10 flex items-center justify-center">
-          <div className="w-[60%] flex flex-col items-center gap-10">
-            <h1 className="text-9xl font-serif text-center font-semibold">
-              Ready for your game-changing{" "}
-              <span className="italic">website?</span>{" "}
+          <div className=" flex flex-col items-center gap-10">
+            <h1 className="text-5xl lg:text-9xl font-serif text-center font-semibold">
+              Ready for your
+              <br />
+              game-changing
+              <br />
+              <span className="italic">website?</span>
             </h1>
-            <p className="w-1/3 text-center tracking-tight">
-              Step on the Double Play court and request a project with a few
-              clicks.
+            <p className="text-center tracking-tight">
+              Step on the Double Play court and
+              <br />
+              request a project with a few clicks.
             </p>
             <Link href={"/#"} className="text-sm">
               Contact

@@ -4,7 +4,7 @@ import React from "react";
 function Header() {
   return (
     <header>
-      <div className="w-full px-10 flex items-center justify-between h-20 fixed z-10 text-[#FBFBFB] ">
+      <div className="w-full px-10 flex items-center justify-between h-20 fixed z-10 text-[#FBFBFB]">
         <div className="flex gap-4 tracking-tight">
           <Link href="/projects">Projects</Link>
           <Link href="/pricing">Pricing</Link>
