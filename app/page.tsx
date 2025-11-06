@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -49,7 +50,7 @@ export default function Home() {
             <Image
               width={1400}
               height={574}
-              src={"/maykls.svg"}
+              src={"/maykls.italic.svg"}
               alt="maykls svg"
               className="w-full h-full"
             />
@@ -221,9 +222,7 @@ export default function Home() {
               <div className="w-full border-t border-[#FBFBFB] flex items-start justify-between pt-5">
                 <div>
                   <h1 className="text-[#FBFBFB] text-6xl  tracking-tight">
-                    <span className="font-snas italic">
-                      Were
-                    </span>{" "}
+                    <span className="font-snas italic">Were</span>{" "}
                     <span className="font-serif">maykls</span>.studio
                   </h1>
                 </div>
@@ -231,14 +230,31 @@ export default function Home() {
                   <p className="text-[#FBFBFB] text-3xl font-medium tracking-tight">
                     <span className="pl-20">A</span> creative boutique studio
                     crafting exceptional
-                    <span className="font-serif italic"> websites</span> with sharp
-                    messaging, award-winning design, and smooth animations. All
-                    delivered with the precision, passion, and dedication of a
-                    Grand Slam Tennis match.
+                    <span className="font-serif italic"> websites</span> with
+                    sharp messaging, award-winning design, and smooth
+                    animations. All delivered with the precision, passion, and
+                    dedication of a Grand Slam Tennis match.
                   </p>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="w-full h-screen p-10 flex items-center justify-center">
+          <div className="w-[60%] flex flex-col items-center gap-10">
+            <h1 className="text-9xl font-serif text-center font-semibold">
+              Ready for your game-changing{" "}
+              <span className="italic">website?</span>{" "}
+            </h1>
+            <p className="w-1/3 text-center tracking-tight">
+              Step on the Double Play court and request a project with a few
+              clicks.
+            </p>
+            <Link href={"/#"} className="text-sm">
+              Contact
+            </Link>
           </div>
         </div>
       </section>

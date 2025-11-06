@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FBFBFB;
-  --foreground: #002BBA;
+  --background: #fbfbfb;
+  --foreground: #002bba;
 }
 
 @theme inline {
@@ -16,4 +16,6 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: "Instrument Sans", sans-serif;
+  height: 100%;
+  scroll-behavior: auto !important; /* disable default smooth scroll */
 }
