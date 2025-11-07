@@ -2,7 +2,11 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import Lenis from "@studio-freight/lenis";
 
-const ScrollContext = createContext({ scrollY: 0 });
+interface ScrollContextType {
+  scrollY: number;
+}
+
+const ScrollContext = createContext<ScrollContextType>({ scrollY: 0 });
 export const useScrollContext = () => useContext(ScrollContext);
 
 export default function ScrollProvider({
@@ -11,7 +15,12 @@ export default function ScrollProvider({
   const [scrollY, setScrollY] = useState<number>(0);
 
   useEffect(() => {
-    const lenis = new Lenis({ smooth: true });
+    const lenis = new Lenis({
+      lerp: 0.5, // scroll silliqligini boshqaradi (0–1 oralig‘ida)
+      wheelMultiplier: 1, // g‘ildirak tezligini boshqaradi
+      touchMultiplier: 1.5, // mobil uchun tezlik
+      infinite: false, // infinite scroll yo‘q bo‘lsa false
+    });
     (window as any).lenis = lenis;
 
     const raf = (time: number) => {
@@ -20,7 +29,7 @@ export default function ScrollProvider({
     };
     requestAnimationFrame(raf);
 
-    lenis.on("scroll", ({ scroll }: {scroll: number}) => {
+    lenis.on("scroll", ({ scroll }: { scroll: number }) => {
       setScrollY(scroll);
     });
 
