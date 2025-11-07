@@ -1,43 +1,26 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import type { MutableRefObject } from "react";
+import { useEffect, useState } from "react";
+import { useScrollContext } from "@/app/context/ScrollContext";
 
-interface HeaderProps {
-  heroRef?: MutableRefObject<HTMLElement | null>;
-}
-
-function Header({ heroRef }: HeaderProps) {
-  const headerRef = useRef<HTMLDivElement | null>(null);
+function Header() {
+  const { scrollY } = useScrollContext();
   const [active, setActive] = useState(false);
 
-  console.log(heroRef);
-
   useEffect(() => {
-
-    const lenis = (window as any).lenis;
-    if (!lenis || !heroRef?.current) return;
-    
-    const onScroll = ({ scroll }: { scroll: number }) => {
-      const heroHeight = heroRef?.current?.clientHeight;
-      if (scroll > heroHeight) {
-        setActive(true);
-      } else {
-        setActive(false);
-      }
-    };
-
-    lenis.on("scroll", onScroll);
-    return () => lenis.off("scroll", onScroll);
-  }, [heroRef]);
+    const heroHeight = window.innerHeight;
+    if (scrollY > heroHeight - 80) setActive(true);
+    else setActive(false);
+  }, [scrollY]);
 
   return (
-    <header ref={headerRef}>
+    <header>
       <div
-        ref={headerRef}
-        className={`w-full px-10 flex items-center justify-between h-20 fixed z-20 border-b border-[#002BBA] bg-[#FBFBFB] 
-     ${active ? "hidden" : "block"}
-            `}
+        className={`w-full px-10 flex items-center justify-between h-20 fixed z-20 border-b transition-all ease-in-out duration-500 ${
+          active
+            ? "text-[#002BBA] border-[#002BBA] bg-[#FBFBFB] "
+            : "text-[#FBFBFB] bg-transparent border-transparent"
+        }`}
       >
         <div className="flex gap-4 tracking-tight">
           <Link href="/projects">Projects</Link>

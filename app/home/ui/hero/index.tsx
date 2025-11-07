@@ -1,14 +1,26 @@
-import { Header } from "@/app/widgets";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
+import { useScrollContext } from "@/app/context/ScrollContext";
 
 function Hero() {
-  const bannerRef = useRef<HTMLElement | null>(null);
+  const heroRef = useRef<HTMLElement | null>(null);
+  const [heroHeight, setHeroHeight] = useState(0);
+  const { scrollY } = useScrollContext();
+
+  useEffect(() => {
+    if (heroRef.current) {
+      setHeroHeight(heroRef.current.clientHeight);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (scrollY > heroHeight - 80) {
+      console.log("hero chiqib ketdi");
+    }
+  }, [scrollY, heroHeight]);
 
   return (
     <>
-      <Header heroRef={bannerRef} />
       <section
-        ref={bannerRef}
         className="relative top-0 left-0 w-full h-screen overflow-hidden"
       >
         <video

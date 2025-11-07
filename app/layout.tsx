@@ -3,6 +3,7 @@ import { Instrument_Sans, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { Header } from "./widgets";
 import Provider from "./provider";
+import ScrollProvider from "./context/ScrollContext";
 
 const instrumentSans = Instrument_Sans({
   variable: "--font-instrument-sans",
@@ -28,12 +29,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Provider>
-        <body
-          className={`${instrumentSans.variable} ${instrumentSerif.variable} antialiased`}
-        >
-          <Header />
-          {children}
-        </body>
+        <ScrollProvider>
+          <body
+            className={`${instrumentSans.variable} ${instrumentSerif.variable} antialiased`}
+          >
+            <Header />
+            {children}
+          </body>
+        </ScrollProvider>
       </Provider>
     </html>
   );
