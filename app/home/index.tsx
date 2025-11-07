@@ -1,13 +1,14 @@
 "use client"
-import { Contact, Hero, Mission, Process, Projects } from './ui'
+import { About, Contact, Hero, Mission, Process, Projects } from './ui'
 
 function App() {
   return (
     <>
     <Hero/>
     <Mission/>
-    <Process/>
     <Projects/>
+    <Process/>
+    <About/>
     <Contact/>
     </>
   )

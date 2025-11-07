@@ -8,6 +8,35 @@ export default function About() {
         <div>
           <h1>About</h1>
         </div>
+        <section>
+          <div>
+            <hr />
+            <div className="overflow-hidden">
+              <div className="w-full h-full">
+                <Image
+                  width={2800}
+                  height={525}
+                  src={"/maykls.svg"}
+                  alt=""
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <hr />
+            <div className="overflow-hidden">
+              <div className="w-full h-full">
+                <Image
+                  width={2800}
+                  height={525}
+                  src={"/studio.svg"}
+                  alt=""
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <hr />
+          </div>
+        </section>
         <div className="relative">
           <div className="w-full h-screen">
             <Image

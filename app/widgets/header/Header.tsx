@@ -16,7 +16,7 @@ function Header() {
   return (
     <header>
       <div
-        className={`w-full px-10 flex items-center justify-between h-20 fixed z-20 border-b transition-all ease-in-out duration-500 ${
+        className={`w-full px-10 flex items-center justify-between h-20 fixed z-20 border-b transition-all ease-in duration-500 ${
           active
             ? "text-[#002BBA] border-[#002BBA] bg-[#FBFBFB] "
             : "text-[#FBFBFB] bg-transparent border-transparent"
