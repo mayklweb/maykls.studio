@@ -1,24 +1,26 @@
 "use client";
-import { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import Lenis from "@studio-freight/lenis";
 
 const ScrollContext = createContext({ scrollY: 0 });
 export const useScrollContext = () => useContext(ScrollContext);
 
-export default function ScrollProvider({ children }) {
-  const [scrollY, setScrollY] = useState(0);
+export default function ScrollProvider({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
+  const [scrollY, setScrollY] = useState<number>(0);
 
   useEffect(() => {
     const lenis = new Lenis({ smooth: true });
-    window.lenis = lenis;
+    (window as any).lenis = lenis;
 
-    const raf = (time) => {
+    const raf = (time: number) => {
       lenis.raf(time);
       requestAnimationFrame(raf);
     };
     requestAnimationFrame(raf);
 
-    lenis.on("scroll", ({ scroll }) => {
+    lenis.on("scroll", ({ scroll }: {scroll: number}) => {
       setScrollY(scroll);
     });
 
