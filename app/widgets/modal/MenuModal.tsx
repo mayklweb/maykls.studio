@@ -66,7 +66,7 @@ function MenuModal() {
               ref={(el) => {
                 if (el) itemsRef.current[i] = el; // faqat tayinlash, return yo'q
               }}
-              className="w-full p-5 text-6xl text-center"
+              className="w-full p-5 text-6xl text-[#002BBA] text-center font-serif font-semibold tracking-tight border-b border-[#002DDA]"
             >
               <Link href={item.href}>{item.label}</Link>
             </div>

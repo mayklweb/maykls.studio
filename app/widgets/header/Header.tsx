@@ -47,7 +47,7 @@ function Header() {
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
         </div>
-        <div className="">
+        <div className="lg:hidden">
           <button
             onClick={() => handleModal()}
             className="text-sm tracking-tight"
