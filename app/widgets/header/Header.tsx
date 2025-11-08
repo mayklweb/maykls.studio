@@ -23,7 +23,7 @@ function Header() {
             : "text-[#FBFBFB] bg-transparent border-transparent"
         }`}
       >
-        <div className="flex gap-4 tracking-tight">
+        <div className="hidden lg:flex gap-4 tracking-tight cursor-pointer">
           <Link href="/projects">Projects</Link>
           <Link href="/pricing">Pricing</Link>
         </div>
@@ -35,7 +35,7 @@ function Header() {
             </h1>
           </Link>
         </div>
-        <div className="flex gap-4 tracking-tight cursor-pointer">
+        <div className="hidden lg:flex gap-4 tracking-tight cursor-pointer">
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
         </div>
