@@ -25,7 +25,7 @@ export default function Process() {
         </div>
         <div className="mt-40 grid grid-cols-1 lg:grid-cols-3 gap-16">
           <div className="border-t border-[#002BBA]">
-            <div className="flex items-center justify-between py-5">
+            <div className="flex items-center justify-between py-4">
               <div>
                 <h3 className="text-2xl font-medium tracking-tight">
                   Strategy
@@ -41,7 +41,7 @@ export default function Process() {
             </p>
           </div>
           <div className="border-t border-[#002BBA]">
-            <div className="flex items-center justify-between py-5">
+            <div className="flex items-center justify-between py-4">
               <div>
                 <h3 className="text-2xl font-medium tracking-tight">Design</h3>
               </div>
@@ -55,7 +55,7 @@ export default function Process() {
             </p>
           </div>
           <div className="border-t border-[#002BBA]">
-            <div className="flex items-center justify-between py-5">
+            <div className="flex items-center justify-between py-4">
               <div>
                 <h3 className="text-2xl font-medium tracking-tight">
                   Development

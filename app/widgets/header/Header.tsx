@@ -10,14 +10,14 @@ function Header() {
 
   useEffect(() => {
     const heroHeight = window.innerHeight;
-    if (scrollY > heroHeight - 100) setActive(true);
+    if (scrollY > heroHeight - 70) setActive(true);
     else setActive(false);
   }, [scrollY]);
 
   return (
     <header>
       <div
-        className={`w-full px-10 flex items-center justify-between h-20 fixed z-20 border-b transition-all ease-in-out duration-500 ${
+        className={`w-full px-5 lg:px-10 py-3 lg:py-5 flex items-center justify-between  fixed z-20 border-b transition-all ease-in-out duration-500 ${
           active
             ? "text-[#002BBA] border-[#002BBA] bg-[#FBFBFB] "
             : "text-[#FBFBFB] bg-transparent border-transparent"
@@ -39,7 +39,7 @@ function Header() {
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
         </div>
-        <div>
+        <div className="lg:hidden">
           <button className="text-sm tracking-tight">Menu</button>
         </div>
       </div>
