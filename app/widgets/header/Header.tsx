@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useScrollContext } from "@/app/context/ScrollContext";
+import { Menu } from "lucide-react";
 
 function Header() {
   const { scrollY } = useScrollContext();
@@ -9,7 +10,7 @@ function Header() {
 
   useEffect(() => {
     const heroHeight = window.innerHeight;
-    if (scrollY > heroHeight - 80) setActive(true);
+    if (scrollY > heroHeight - 100) setActive(true);
     else setActive(false);
   }, [scrollY]);
 
@@ -26,15 +27,22 @@ function Header() {
           <Link href="/projects">Projects</Link>
           <Link href="/pricing">Pricing</Link>
         </div>
-        <Link href="/">
-          <h1 className="text-2xl">
-            <span className="font-serif tracking-tight">maykls</span>
-            <span className="font-sans tracking-tighter">.studio</span>
-          </h1>
-        </Link>
+        <div>
+          <Link href="/">
+            <h1 className="text-2xl">
+              <span className="font-serif tracking-tight">maykls</span>
+              <span className="font-sans tracking-tighter">.studio</span>
+            </h1>
+          </Link>
+        </div>
         <div className="flex gap-4 tracking-tight cursor-pointer">
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
+        </div>
+        <div>
+          <button>
+            <Menu />
+          </button>
         </div>
       </div>
     </header>

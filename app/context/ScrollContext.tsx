@@ -16,10 +16,10 @@ export default function ScrollProvider({
 
   useEffect(() => {
     const lenis = new Lenis({
-      lerp: 0.5, // scroll silliqligini boshqaradi (0–1 oralig‘ida)
-      wheelMultiplier: 1, // g‘ildirak tezligini boshqaradi
-      touchMultiplier: 1.5, // mobil uchun tezlik
-      infinite: false, // infinite scroll yo‘q bo‘lsa false
+      lerp: 0.5, 
+      wheelMultiplier: 1, 
+      touchMultiplier: 1.5, 
+      infinite: false, 
     });
     (window as any).lenis = lenis;
 
