@@ -5,7 +5,7 @@ import { useScrollContext } from "@/app/context/ScrollContext";
 import { useEffect, useRef } from "react";
 
 function MenuModal() {
-  const containerRef = useRef<HTMLElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const itemsRef = useRef<HTMLElement[]>([]);
   const { menu, setMenu } = useScrollContext();
 

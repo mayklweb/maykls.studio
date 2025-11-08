@@ -2,7 +2,7 @@ import { useRef, useEffect, useState } from "react";
 import { useScrollContext } from "@/app/context/ScrollContext";
 
 function Hero() {
-  const heroRef = useRef<HTMLElement | null>(null);
+  const heroRef = useRef<HTMLDivElement | null>(null);
   const [heroHeight, setHeroHeight] = useState(0);
   const { scrollY } = useScrollContext();
 
