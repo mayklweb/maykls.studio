@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Instrument_Sans, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { Header } from "./widgets";
-import Provider from "./provider";
 import ScrollProvider from "./context/ScrollContext";
 import MenuModal from "./widgets/modal/MenuModal";
 
@@ -29,17 +28,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Provider>
+      <body
+        className={`${instrumentSans.variable} ${instrumentSerif.variable} antialiased`}
+      >
         <ScrollProvider>
-          <body
-            className={`${instrumentSans.variable} ${instrumentSerif.variable} antialiased`}
-          >
-            <Header />
-            {children}
-            {/* <MenuModal /> */}
-          </body>
+          <Header />
+          {children}
+          <MenuModal />
         </ScrollProvider>
-      </Provider>
+      </body>
     </html>
   );
 }

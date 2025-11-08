@@ -5,8 +5,7 @@ import { useScrollContext } from "@/app/context/ScrollContext";
 import { Menu, TextAlignJustify } from "lucide-react";
 
 function Header() {
-  const { scrollY } = useScrollContext();
-  const [active, setActive] = useState(false);
+  const { scrollY, setActive, active, setMenu, menu } = useScrollContext();
 
   useEffect(() => {
     const heroHeight = window.innerHeight;
@@ -14,10 +13,19 @@ function Header() {
     else setActive(false);
   }, [scrollY]);
 
+  const handleModal = () => {
+    if (!menu) {
+      setActive(true);
+      setMenu(true);
+    } else {
+      setMenu(false);
+    }
+  };
+
   return (
     <header>
       <div
-        className={`w-full px-5 lg:px-10 py-3 lg:py-5 flex items-center justify-between  fixed z-20 border-b transition-all ease-in-out duration-500 ${
+        className={`w-full px-5 lg:px-10 py-3 lg:py-5 flex items-center justify-between fixed z-20 border-b transition-all ease-in-out duration-500 ${
           active
             ? "text-[#002BBA] border-[#002BBA] bg-[#FBFBFB] "
             : "text-[#FBFBFB] bg-transparent border-transparent"
@@ -39,8 +47,13 @@ function Header() {
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
         </div>
-        <div className="lg:hidden">
-          <button className="text-sm tracking-tight">Menu</button>
+        <div className="">
+          <button
+            onClick={() => handleModal()}
+            className="text-sm tracking-tight"
+          >
+            Menu
+          </button>
         </div>
       </div>
     </header>

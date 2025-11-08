@@ -12,16 +12,21 @@
   --font-serif: var(--font-instrument-serif);
 }
 
-
+html,
 body {
+  width: 100%;
+  height: 100%;
+  /* overflow: hidden; */
   background: var(--background);
   color: var(--foreground);
   font-family: "Instrument Sans", sans-serif;
-  height: 100%;
-  scroll-behavior: auto !important; /* disable default smooth scroll */
 }
 
 ::selection {
   color: white;
   background: black;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
