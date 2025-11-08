@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 
 function MenuModal() {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const itemsRef = useRef<HTMLElement[]>([]);
+  const itemsRef = useRef<HTMLDivElement[]>([]);
   const { menu, setMenu } = useScrollContext();
 
   useEffect(() => {
@@ -63,7 +63,7 @@ function MenuModal() {
           {menuItems.map((item, i) => (
             <div
               key={i}
-              ref={(el) => (itemsRef.current[i] = el)}
+              ref={el => el && (itemsRef.current[i] = el)}
               className="w-full p-5 text-6xl text-[#002BBA] text-center font-serif font-semibold tracking-tight border-b border-[#002DDA]"
             >
               <Link href={item.href}>{item.label}</Link>
