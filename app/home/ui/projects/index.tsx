@@ -73,7 +73,7 @@ function Projects() {
                 <div className="w-full h-full flex flex-col lg:flex-row items-center justify-center gap-5 border-t lg:border-t-0 border-[#FBFBFB] pt-2">
                   <div className="w-full lg:w-auto flex items-center justify-between">
                     <h1 className="text-6xl lg:text-9xl font-serif">Ondevi</h1>
-                    <p className="lg:hidden text-sm">Tap to view</p>
+                    <p className="lg:hidden text-sm tracking-tighter">Tap to view</p>
                   </div>
                   <div className="w-full h-full lg:w-auto lg:h-auto rounded-lg overflow-hidden lg:hidden group-hover:block transition-all duration-500 ease-out">
                     <Image
@@ -103,7 +103,7 @@ function Projects() {
                 <div className="w-full h-full flex flex-col lg:flex-row items-center justify-center gap-5 border-t lg:border-t-0 border-[#FBFBFB] pt-2">
                   <div className="w-full lg:w-auto flex items-center justify-between">
                     <h1 className="text-6xl lg:text-9xl font-serif">Ondevi</h1>
-                    <p className="lg:hidden text-sm">Tap to view</p>
+                    <p className="lg:hidden text-sm tracking-tighter">Tap to view</p>
                   </div>
                   <div className="w-full h-full lg:w-auto lg:h-auto rounded-lg overflow-hidden lg:hidden group-hover:block transition-all duration-500 ease-out">
                     <Image
@@ -133,7 +133,7 @@ function Projects() {
                 <div className="w-full h-full flex flex-col lg:flex-row items-center justify-center gap-5 border-t lg:border-t-0 border-[#FBFBFB] pt-2">
                   <div className="w-full lg:w-auto flex items-center justify-between">
                     <h1 className="text-6xl lg:text-9xl font-serif">Ondevi</h1>
-                    <p className="lg:hidden text-sm">Tap to view</p>
+                    <p className="lg:hidden text-sm tracking-tighter">Tap to view</p>
                   </div>
                   <div className="w-full h-full lg:w-auto lg:h-auto rounded-lg overflow-hidden lg:hidden group-hover:block transition-all duration-500 ease-out">
                     <Image

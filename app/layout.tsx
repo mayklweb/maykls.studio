@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "./widgets";
 import Provider from "./provider";
 import ScrollProvider from "./context/ScrollContext";
+import MenuModal from "./widgets/modal/MenuModal";
 
 const instrumentSans = Instrument_Sans({
   variable: "--font-instrument-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({
           >
             <Header />
             {children}
+            {/* <MenuModal /> */}
           </body>
         </ScrollProvider>
       </Provider>

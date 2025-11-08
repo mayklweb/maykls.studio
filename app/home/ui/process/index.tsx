@@ -1,7 +1,7 @@
 export default function Process() {
   return (
     <section>
-      <div className="px-5 lg:px-10">
+      <div className="px-5 lg:px-10 mt-10">
         <div className="lg:hidden ">
           <h1 className="text-5xl lg:text-6xl font-serif font-semibold">
             Process
@@ -23,7 +23,7 @@ export default function Process() {
             but serve a purpose, spark emotions, and drive real business impact.
           </p>
         </div>
-        <div className="mt-40 grid grid-cols-1 lg:grid-cols-3 gap-16">
+        <div className="mt-20 lg:mt-40 grid grid-cols-1 lg:grid-cols-3 gap-16">
           <div className="border-t border-[#002BBA]">
             <div className="flex items-center justify-between py-4">
               <div>
