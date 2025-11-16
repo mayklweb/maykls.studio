@@ -1,19 +1,11 @@
 import Image from "next/image";
 
-function Projects() {
+function Projects({props, ref}: any) {
   return (
-    <section>
-      <div className="relative">
-        <div>
-          <Image
-            width={1400}
-            height={574}
-            src={"/maykls.italic.svg"}
-            alt="maykls svg"
-            className="w-full h-full"
-          />
-        </div>
-        <div className="bg-[#002BBA] text-[#FBFBFB] py-5">
+    <section ref={ref}>
+      <div className="relative overflow-hidden">
+       
+        <div className="w-full h-full py-5 text-[#FBFBFB] bg-[#002BBA]">
           <div className="w-full p-5 lg:p-10 flex items-start justify-between flex-col lg:flex-row  lg:items-center gap-4">
             <h1 className="text-6xl font-serif tracking-tight">
               Selected work <sup>03</sup>
@@ -73,7 +65,9 @@ function Projects() {
                 <div className="w-full h-full flex flex-col lg:flex-row items-center justify-center gap-5 border-t lg:border-t-0 border-[#FBFBFB] pt-2">
                   <div className="w-full lg:w-auto flex items-center justify-between">
                     <h1 className="text-6xl lg:text-9xl font-serif">Ondevi</h1>
-                    <p className="lg:hidden text-sm tracking-tighter">Tap to view</p>
+                    <p className="lg:hidden text-sm tracking-tighter">
+                      Tap to view
+                    </p>
                   </div>
                   <div className="w-full h-full lg:w-auto lg:h-auto rounded-lg overflow-hidden lg:hidden group-hover:block transition-all duration-500 ease-out">
                     <Image
@@ -103,7 +97,9 @@ function Projects() {
                 <div className="w-full h-full flex flex-col lg:flex-row items-center justify-center gap-5 border-t lg:border-t-0 border-[#FBFBFB] pt-2">
                   <div className="w-full lg:w-auto flex items-center justify-between">
                     <h1 className="text-6xl lg:text-9xl font-serif">Ondevi</h1>
-                    <p className="lg:hidden text-sm tracking-tighter">Tap to view</p>
+                    <p className="lg:hidden text-sm tracking-tighter">
+                      Tap to view
+                    </p>
                   </div>
                   <div className="w-full h-full lg:w-auto lg:h-auto rounded-lg overflow-hidden lg:hidden group-hover:block transition-all duration-500 ease-out">
                     <Image
@@ -133,7 +129,9 @@ function Projects() {
                 <div className="w-full h-full flex flex-col lg:flex-row items-center justify-center gap-5 border-t lg:border-t-0 border-[#FBFBFB] pt-2">
                   <div className="w-full lg:w-auto flex items-center justify-between">
                     <h1 className="text-6xl lg:text-9xl font-serif">Ondevi</h1>
-                    <p className="lg:hidden text-sm tracking-tighter">Tap to view</p>
+                    <p className="lg:hidden text-sm tracking-tighter">
+                      Tap to view
+                    </p>
                   </div>
                   <div className="w-full h-full lg:w-auto lg:h-auto rounded-lg overflow-hidden lg:hidden group-hover:block transition-all duration-500 ease-out">
                     <Image
