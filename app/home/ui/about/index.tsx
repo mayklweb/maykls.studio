@@ -126,8 +126,7 @@ export default function About() {
             </div> */}
           </div>
         </section>
-git config --global user.email "muhammadevvv@gmail.com"
-git config --global user.name "Muhammad"
+
         <div className="relative">
           <div className="w-full h-screen">
             <Image
