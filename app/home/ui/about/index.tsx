@@ -41,7 +41,7 @@ export default function About() {
   // }, []);
 
   return (
-    <section>
+    <section data-header="light">
       <div>
         <div>
           <h1>About</h1>
@@ -151,7 +151,7 @@ export default function About() {
                   crafting exceptional
                   <span className="font-serif italic"> websites</span> with
                   sharp messaging, award-winning design, and smooth animations.
-                  All delivered with the precision, passion, and dedication of a
+                  All delivered with the precision,  passion, and dedication of a
                   Grand Slam Tennis match.
                 </p>
               </div>

@@ -1,10 +1,9 @@
 import Image from "next/image";
 
-function Projects({props, ref}: any) {
+function Projects({ props, ref }: any) {
   return (
-    <section ref={ref}>
+    <section data-header="light" ref={ref}>
       <div className="relative overflow-hidden">
-       
         <div className="w-full h-full py-5 text-[#FBFBFB] bg-[#002BBA]">
           <div className="w-full p-5 lg:p-10 flex items-start justify-between flex-col lg:flex-row  lg:items-center gap-4">
             <h1 className="text-6xl font-serif tracking-tight">

@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Mission() {
   return (
-    <section>
+    <section data-header="dark">
       <div className="flex flex-col overflow-hidden">
         <div className="p-5 lg:p-10 grid grid-cols-1 lg:grid-cols-2">
           <div className="w-2/3 flex items-start">

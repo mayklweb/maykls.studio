@@ -18,21 +18,42 @@ function Hero() {
     }
   }, [scrollY, heroHeight]);
 
+  const svgPattern = `
+<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27">
+  <rect width="27" height="27" fill="#FBFBFB"/>
+  <path d="M27 0 L0 0 L0 27" fill="none" stroke="#002DDA" stroke-width="0.2"/>
+</svg>
+`;
+
   return (
     <>
-      <section
-        className="relative top-0 left-0 w-full h-screen overflow-hidden"
-      >
-        <video
-          className="absolute top-0 w-full h-full object-cover"
-          src="https://cdn.prod.website-files.com/67fcd4974b30a00d13095550%2F682209dcc6a9b4d97675e143_DoublePlay_Loop_FullHD-transcode.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
-        <div className="relative z-10 w-full h-full flex items-center justify-center">
-          <h1 className="text-white text-5xl font-bold">Build your website</h1>
+      <section className="relative top-0 left-0 w-full h-screen overflow-hidden">
+        <div
+          className="w-full h-full"
+          style={{
+            backgroundColor: "#FBFBFB",
+            backgroundImage: `url("data:image/svg+xml;utf8,${encodeURIComponent(
+              svgPattern
+            )}")`,
+          }}
+        > 
+          <div className=" w-full h-full flex items-center justify-center">
+            {/* <h1 className="text-[256px] tracking-tighter">
+              <span className="font-serif">maykl</span>
+              <span className="font-serif italic">s</span>
+              <span className="font-sans tracking-[-20px]">tudio</span>
+            </h1> */}
+            <h1 className="font-serif text-[256px] tracking-tight">maykl§</h1>
+            <h1 className="text-[256px] tracking-tighter">tudio</h1>
+          </div>
+
+          {/* <div className="w-full h-full flex items-center justify-evenly bg-[#fbfbfb]">
+            <div className="h-full border-l-[0.5px] border-[#002DDA] border-solid"></div>
+            <div className="h-full border-l-[0.5px] border-[#002DDA] border-solid"></div>
+            <div className="h-full border-l-[0.5px] border-[#002DDA] border-solid"></div>
+            <div className="h-full border-l-[0.5px] border-[#002DDA] border-solid"></div>
+            <div className="h-full border-l-[0.5px] border-[#002DDA] border-solid"></div>
+            </div> */}
         </div>
       </section>
     </>

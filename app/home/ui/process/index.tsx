@@ -1,7 +1,7 @@
 export default function Process() {
   return (
     <section>
-      <div className="px-5 lg:px-10 mt-10">
+      <div data-header="dark" className="px-5 lg:px-10 mt-10">
         <div className="lg:hidden ">
           <h1 className="text-5xl lg:text-6xl font-serif font-semibold">
             Process

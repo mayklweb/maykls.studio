@@ -30,9 +30,9 @@ export default function ScrollProvider({
 
   useEffect(() => {
     const lenis = new Lenis({
-      lerp: 0.5,
-      wheelMultiplier: 1,
-      touchMultiplier: 1.5,
+      lerp: 0.05,
+      wheelMultiplier: 0.5,
+      touchMultiplier: 0.05,
       infinite: false,
     });
     (window as any).lenis = lenis;
