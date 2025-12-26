@@ -3,7 +3,7 @@ import { Instrument_Sans, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { Header } from "./widgets";
 import ScrollProvider from "./context/ScrollContext";
-import MenuModal from "./widgets/modal/MenuModal";
+
 
 const instrumentSans = Instrument_Sans({
   variable: "--font-instrument-sans",
@@ -34,7 +34,6 @@ export default function RootLayout({
         <ScrollProvider>
           <Header />
           {children}
-          <MenuModal />
         </ScrollProvider>
       </body>
     </html>
