@@ -1,159 +1,80 @@
-import Image from "next/image";
+"use client"; // important for GSAP in Next.js
 
-function Projects({ props, ref }: any) {
+import Image from "next/image";
+import React, { useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
+function Projects() {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const maskRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const wrapper = wrapperRef.current;
+    const mask = maskRef.current;
+    const image = imageRef.current;
+
+    if (!wrapper || !mask || !image) return;
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: wrapper,
+        start: "top bottom",
+        toggleActions: "play none none none",
+      },
+    });
+
+    // 1️⃣ MASK slides down smoothly
+    tl.fromTo(
+      mask,
+      {
+        clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
+      },
+      {
+        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+        duration: 0.6,
+        ease: "power.inOut",
+      }
+    );
+
+    // 2️⃣ IMAGE clip-path reveal + slight scale + vertical move
+    tl.fromTo(
+      image,
+      {
+        clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
+      },
+      {
+        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+        duration: 0.6,
+        ease: "power.out",
+      },
+      "<=0.2" // overlap for smooth cinematic effect
+    );
+  }, []);
+
   return (
-    <section data-header="light" ref={ref}>
-      <div className="relative overflow-hidden">
-        <div className="w-full h-full py-5 text-[#FBFBFB] bg-[#002BBA]">
-          <div className="w-full p-5 lg:p-10 flex items-start justify-between flex-col lg:flex-row  lg:items-center gap-4">
-            <h1 className="text-6xl font-serif tracking-tight">
-              Selected work <sup>03</sup>
-            </h1>
-            <p className="text-2xl tracking-tighter">
-              We helped more than 70+ brands,
-              <br />
-              start-ups and agencies to level up
-              <br />
-              their
-              <span className="font-serif italic tracking-tight">website</span>
-              game!
-            </p>
-          </div>
-          <div className="mt-10">
-            {/* <div className="w-full border-t lg:border-t-0 lg:border-b border-solid border-[#FBFBFB] cursor-pointer group">
-              <div className="px-10 py-5 flex items-end justify-between relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0 after:z-[-1] after:bg-[#FBFBFB] z-1 group-hover:text-[#002BBA] group-hover:after:h-full after:transition-all after:ease-out after:duration-300 transition-all ease-out duration-300">
-                <div className="w-full h-full flex items-end justify-between absolute top-0 left-0 px-10 py-5 ">
-                  <div className="w-1/4 flex items-center justify-between">
-                    <p className="text-lg tracking-tighter">Agency</p>
-                    <p className="text-lg tracking-tighter">Website</p>
-                  </div>
-                  <div className="w-1/4 flex items-center justify-between">
-                    <p className="text-lg tracking-tighter">Year</p>
-                    <p className="text-lg tracking-tighter">2025</p>
-                  </div>
-                </div>
-                <div className="w-full h-full flex items-center justify-center gap-5">
-                  <div>
-                    <h1 className="text-9xl font-serif">Ondevi</h1>
-                    <p className="lg:hidden">Tap to view</p>
-                  </div>
-                  <div className="rounded-lg overflow-hidden hidden group-hover:block transition-all duration-500 ease-out">
-                    <Image
-                      src={"/about.avif"}
-                      alt=""
-                      width={220}
-                      height={80}
-                      priority
-                    />
-                  </div>
-                </div>
-              </div>
-            </div> */}
-            <div className="w-full lg:border-b border-solid border-[#FBFBFB] cursor-pointer group">
-              <div className="px-5 lg:px-10 py-4  flex items-end justify-between relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0 after:z-[-1] after:bg-[#FBFBFB] z-1 group-hover:text-[#002BBA] group-hover:after:h-full after:transition-all after:ease-out after:duration-300 transition-all ease-out duration-300">
-                <div className="w-full h-full hidden lg:flex items-end justify-between absolute top-0 left-0 px-10 py-4 ">
-                  <div className="w-1/4 flex items-center justify-between">
-                    <p className="text-lg tracking-tighter">Agency</p>
-                    <p className="text-lg tracking-tighter">Website</p>
-                  </div>
-                  <div className="w-1/4 flex items-center justify-between text-[#FBFBFB]">
-                    <p className="text-lg tracking-tighter">Year</p>
-                    <p className="text-lg tracking-tighter">2025</p>
-                  </div>
-                </div>
-                <div className="w-full h-full flex flex-col lg:flex-row items-center justify-center gap-5 border-t lg:border-t-0 border-[#FBFBFB] pt-2">
-                  <div className="w-full lg:w-auto flex items-center justify-between">
-                    <h1 className="text-6xl lg:text-9xl font-serif">Ondevi</h1>
-                    <p className="lg:hidden text-sm tracking-tighter">
-                      Tap to view
-                    </p>
-                  </div>
-                  <div className="w-full h-full lg:w-auto lg:h-auto rounded-lg overflow-hidden lg:hidden group-hover:block transition-all duration-500 ease-out">
-                    <Image
-                      src={"/about.avif"}
-                      alt=""
-                      width={3840 / 20}
-                      height={2160 / 20}
-                      priority
-                      className="w-full h-full lg:w-auto lg:h-auto"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="w-full lg:border-b border-solid border-[#FBFBFB] cursor-pointer group">
-              <div className="px-5 lg:px-10 py-4  flex items-end justify-between relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0 after:z-[-1] after:bg-[#FBFBFB] z-1 group-hover:text-[#002BBA] group-hover:after:h-full after:transition-all after:ease-out after:duration-300 transition-all ease-out duration-300">
-                <div className="w-full h-full hidden lg:flex items-end justify-between absolute top-0 left-0 px-10 py-4 ">
-                  <div className="w-1/4 flex items-center justify-between">
-                    <p className="text-lg tracking-tighter">Agency</p>
-                    <p className="text-lg tracking-tighter">Website</p>
-                  </div>
-                  <div className="w-1/4 flex items-center justify-between text-[#FBFBFB]">
-                    <p className="text-lg tracking-tighter">Year</p>
-                    <p className="text-lg tracking-tighter">2025</p>
-                  </div>
-                </div>
-                <div className="w-full h-full flex flex-col lg:flex-row items-center justify-center gap-5 border-t lg:border-t-0 border-[#FBFBFB] pt-2">
-                  <div className="w-full lg:w-auto flex items-center justify-between">
-                    <h1 className="text-6xl lg:text-9xl font-serif">Ondevi</h1>
-                    <p className="lg:hidden text-sm tracking-tighter">
-                      Tap to view
-                    </p>
-                  </div>
-                  <div className="w-full h-full lg:w-auto lg:h-auto rounded-lg overflow-hidden lg:hidden group-hover:block transition-all duration-500 ease-out">
-                    <Image
-                      src={"/about.avif"}
-                      alt=""
-                      width={3840 / 20}
-                      height={2160 / 20}
-                      priority
-                      className="w-full h-full lg:w-auto lg:h-auto"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="w-full lg:border-b border-solid border-[#FBFBFB] cursor-pointer group">
-              <div className="px-5 lg:px-10 py-4  flex items-end justify-between relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0 after:z-[-1] after:bg-[#FBFBFB] z-1 group-hover:text-[#002BBA] group-hover:after:h-full after:transition-all after:ease-out after:duration-300 transition-all ease-out duration-300">
-                <div className="w-full h-full hidden lg:flex items-end justify-between absolute top-0 left-0 px-10 py-4 ">
-                  <div className="w-1/4 flex items-center justify-between">
-                    <p className="text-lg tracking-tighter">Agency</p>
-                    <p className="text-lg tracking-tighter">Website</p>
-                  </div>
-                  <div className="w-1/4 flex items-center justify-between text-[#FBFBFB]">
-                    <p className="text-lg tracking-tighter">Year</p>
-                    <p className="text-lg tracking-tighter">2025</p>
-                  </div>
-                </div>
-                <div className="w-full h-full flex flex-col lg:flex-row items-center justify-center gap-5 border-t lg:border-t-0 border-[#FBFBFB] pt-2">
-                  <div className="w-full lg:w-auto flex items-center justify-between">
-                    <h1 className="text-6xl lg:text-9xl font-serif">Ondevi</h1>
-                    <p className="lg:hidden text-sm tracking-tighter">
-                      Tap to view
-                    </p>
-                  </div>
-                  <div className="w-full h-full lg:w-auto lg:h-auto rounded-lg overflow-hidden lg:hidden group-hover:block transition-all duration-500 ease-out">
-                    <Image
-                      src={"/about.avif"}
-                      alt=""
-                      width={3840 / 20}
-                      height={2160 / 20}
-                      priority
-                      className="w-full h-full lg:w-auto lg:h-auto"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* <div className="w-full border-b border-solid border-[#FBFBFB] cursor-pointer group">
-            <div className="px-10 py-10 flex items-end justify-between relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0 after:z-[-1] after:bg-[#FBFBFB] z-1 group-hover:text-[#002BBA] group-hover:after:h-full after:transition-all after:ease-out after:duration-300 transition-all ease-out duration-300">
-              <p className="text-lg tracking-tighter">Agency</p>
-              <p className="text-lg tracking-tighter">Website</p>
-              <h1 className="text-8xl font-serif">Ondevi</h1>
-              <p className="text-lg tracking-tighter">Year</p>
-              <p className="text-lg tracking-tighter">2025</p>
-            </div>
-          </div> */}
+    <section>
+      <div className="w-full h-screen flex items-center justify-center overflow-hidden">
+        <div
+          ref={wrapperRef}
+          className="relative w-[420px] h-[260px] overflow-hidden"
+        >
+          {/* MASK */}
+          <div
+            ref={maskRef}
+            className="absolute w-full h-full bg-[#002BBA] z-20"
+          />
+          {/* IMAGE WRAPPER */}
+          <div ref={imageRef} className="absolute w-full h-full z-30">
+            <Image
+              src="/about.avif"
+              alt=""
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
       </div>
