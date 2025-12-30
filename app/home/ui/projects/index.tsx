@@ -6,7 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-function Projects() {
+function Projects({ props, ref }: { props?: any; ref?: React.ForwardedRef<HTMLElement> }) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const maskRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
@@ -55,7 +55,7 @@ function Projects() {
   }, []);
 
   return (
-    <section>
+    <section ref={ref} className="relative z-10">
       <div className="w-full h-screen flex items-center justify-center overflow-hidden">
         <div
           ref={wrapperRef}
