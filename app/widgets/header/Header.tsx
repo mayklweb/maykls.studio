@@ -35,14 +35,14 @@ function Header() {
       gsap.fromTo(
         itemsRef.current,
         { y: 100 },
-        { y: 0, stagger: 0.1, duration: 0.6, ease: "power3.out" }
+        { y: 0, stagger: 0.08, duration: 0.8, ease: "power4.out" }
       );
     } else {
       gsap.to(itemsRef.current, {
         y: 100,
         stagger: 0.1,
         duration: 0.4,
-        ease: "power3.out",
+        ease: "power4.out",
       });
 
       gsap.to(dropdown, {
@@ -78,7 +78,7 @@ function Header() {
           {menuItems.map((item, i) => (
             <div
               key={i}
-              className=" text-[#002BBA] font-serif font-semibold border-b border-[#002BBA]/20 flex items-center py-1 overflow-hidden"
+              className=" text-[#002BBA] font-serif font-semibold border-b border-[#002BBA] flex items-center py-1 overflow-hidden"
             >
               <Link
                 ref={(el) => {
