@@ -36,7 +36,7 @@ function Header() {
       gsap.fromTo(
         linesRef.current,
         { width: "0px" },
-        { width: "100%", stagger: 0.1, duration: 0.4, ease: "power3.inOut" }
+        { width: "100%", stagger: 0.1, duration: 0.6, ease: "power4.inOut" }
       );
 
       gsap.fromTo(
@@ -55,7 +55,7 @@ function Header() {
         width: "0px",
         stagger: 0.1,
         duration: 0.6,
-        ease: "power4.out",
+        ease: "power4.inOut",
       });
 
       gsap.to(itemsRef.current, {
@@ -95,17 +95,17 @@ function Header() {
           {menuItems.map((item, i) => (
             <div
               key={i}
-              className=" text-[#002BBA] font-serif font-semibold flex flex-col py-1 overflow-hidden"
+              className=" text-[#002BBA] font-serif font-semibold flex flex-col overflow-hidden"
             >
               <Link
                 ref={(el) => {
                   if (el) itemsRef.current[i] = el;
                 }}
-                className="italic tracking-tight flex gap-2 w-full group overflow-hidden h-5"
+                className="italic tracking-tight flex gap-2 w-full group overflow-hidden "
                 href={item.href}
               >
                 <span className="">({i + 1})</span>
-                <span className=" group-hover:pl-2 group-hover:opacity-50 transition-all duration-500 ease-in-out">
+                <span className="group-hover:pl-2 group-hover:opacity-50 transition-all duration-500 ease-in-out">
                   {item.label}
                 </span>
               </Link>
