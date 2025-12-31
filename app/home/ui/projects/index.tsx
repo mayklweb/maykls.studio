@@ -21,7 +21,7 @@ function Projects({ props, ref }: { props?: any; ref?: React.ForwardedRef<HTMLEl
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: wrapper,
-        start: "top bottom",
+        start: "top 80%",
         toggleActions: "play none none none",
       },
     });
@@ -34,8 +34,8 @@ function Projects({ props, ref }: { props?: any; ref?: React.ForwardedRef<HTMLEl
       },
       {
         clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-        duration: 0.6,
-        ease: "power.inOut",
+        duration: 1.2,
+        ease: "power4.out",
       }
     );
 
@@ -47,8 +47,8 @@ function Projects({ props, ref }: { props?: any; ref?: React.ForwardedRef<HTMLEl
       },
       {
         clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-        duration: 0.6,
-        ease: "power.out",
+        duration: 1.2,
+        ease: "power4.out",
       },
       "<=0.2" // overlap for smooth cinematic effect
     );
@@ -59,7 +59,7 @@ function Projects({ props, ref }: { props?: any; ref?: React.ForwardedRef<HTMLEl
       <div className="w-full h-screen flex items-center justify-center overflow-hidden">
         <div
           ref={wrapperRef}
-          className="relative w-[420px] h-[260px] overflow-hidden"
+          className="relative w-[420px] h-[260px] rounded-sm overflow-hidden"
         >
           {/* MASK */}
           <div
