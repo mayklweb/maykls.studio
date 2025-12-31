@@ -61,7 +61,7 @@ function Header() {
   ];
 
   return (
-    <header className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[260px] bg-[#002BBA]/10 backdrop-blur-lg rounded-sm px-2 py-1">
+    <header onMouseEnter={() => setMenu(true)} onMouseLeave={() => setMenu(false)} className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[260px] bg-[#002BBA]/10 backdrop-blur-lg rounded-sm px-2 py-1">
       <div className="flex justify-between items-center text-white">
         <Link href="/">
           <Image src="/maykls.italic.svg" width={60} height={26} alt="Logo" />
