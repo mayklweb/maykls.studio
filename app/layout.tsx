@@ -1,20 +1,53 @@
 import type { Metadata } from "next";
-import { Instrument_Sans, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { Header } from "./widgets";
 import ReactLenis from "lenis/react";
 import AppProvider from "./context/AppContext";
 import LayoutClient from "./layout-client.tsx";
+import localFont from "next/font/local";
 
-const instrumentSans = Instrument_Sans({
+const instrumentSans = localFont({
+  src: [
+    {
+      path: "../public/fonts/Instrument_Sans/static/InstrumentSans-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Instrument_Sans/static/InstrumentSans-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Instrument_Sans/static/InstrumentSans-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Instrument_Sans/static/InstrumentSans-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   variable: "--font-instrument-sans",
-  subsets: ["latin"],
+  display: "swap",
 });
 
-const instrumentSerif = Instrument_Serif({
-  weight: "400",
+const instrumentSerif = localFont({
+  src: [
+    {
+      path: "../public/fonts/Instrument_Serif/InstrumentSerif-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Instrument_Serif/InstrumentSerif-Italic.ttf",
+      weight: "600",
+      style: "italic",
+    },
+  ],
   variable: "--font-instrument-serif",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
