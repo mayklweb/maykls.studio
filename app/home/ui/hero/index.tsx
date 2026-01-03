@@ -1,21 +1,4 @@
-import { useRef, useEffect, useState } from "react";
-
 function Hero() {
-  const heroRef = useRef<HTMLDivElement | null>(null);
-  const [heroHeight, setHeroHeight] = useState(0);
-
-  useEffect(() => {
-    if (heroRef.current) {
-      setHeroHeight(heroRef.current.clientHeight);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (scrollY > heroHeight - 80) {
-      console.log("hero chiqib ketdi");
-    }
-  }, [scrollY, heroHeight]);
-
   const svgPattern = `
 <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27">
   <rect width="27" height="27" fill="#FBFBFB"/>

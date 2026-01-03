@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { AnchorHTMLAttributes, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { useRouter } from "next/navigation";
