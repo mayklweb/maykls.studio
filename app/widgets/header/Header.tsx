@@ -103,7 +103,7 @@ function Header() {
     <header
       onMouseEnter={() => isDesktop() && setMenu(true)}
       onMouseLeave={() => isDesktop() && setMenu(false)}
-      className="fixed bottom-5 lg:bottom-auto lg:top-5 left-1/2 -translate-x-1/2 z-50 w-[260px] bg-[#002BBA]/10 backdrop-blur-lg rounded-sm px-2 py-1"
+      className="fixed bottom-0 lg:bottom-auto lg:top-5 left-1/2 -translate-x-1/2 z-50 w-[260px] bg-[#002BBA]/10 backdrop-blur-lg rounded-sm px-2 py-1"
     >
       {/* Mobile dropdown */}
 
