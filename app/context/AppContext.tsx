@@ -16,35 +16,39 @@ export const useAppContext = () => {
   return ctx;
 };
 
-export default function AppProvider({ children }: { children: React.ReactNode }) {
+export default function AppProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const overlayRef = useRef<HTMLDivElement>(null);
 
-  // PAGE LEAVE → overlay pastga tushadi
+  // PAGE LEAVE (tepdan pastga tushadi)
   const playTransition = (cb: () => void) => {
     if (!overlayRef.current) return;
 
     gsap.fromTo(
       overlayRef.current,
-      { y: "-100%" }, // yuqoridan boshlash
+      { y: "-100%" },
       {
-        y: "0%", // pastga tushadi
-        duration: 0.6,
+        y: "0%",
+        duration: 1,
         ease: "power4.inOut",
         onComplete: cb,
       }
     );
   };
 
-  // PAGE ENTER → overlay yuqoriga chiqadi
+  // PAGE ENTER (tepaga chiqib ketadi)
   const reveal = () => {
     if (!overlayRef.current) return;
 
     gsap.fromTo(
       overlayRef.current,
-      { y: "0%" }, // pastda
+      { y: "0%" },
       {
-        y: "-100%", // yuqoriga chiqadi
-        duration: 0.6,
+        y: "-100%",
+        duration: 1,
         ease: "power4.inOut",
       }
     );
@@ -54,8 +58,8 @@ export default function AppProvider({ children }: { children: React.ReactNode })
     <AppContext.Provider value={{ playTransition, reveal }}>
       <div
         ref={overlayRef}
-        className="fixed inset-0 bg-[#002BBA] z-9999"
-        style={{ transform: "translateY(-100%)" }} // initial hidden
+        className="fixed inset-0 bg-[#002BBA] z-9999 -translate-y-full"
+        style={{ transform: "translateY(-100%)" }}
       />
       {children}
     </AppContext.Provider>
