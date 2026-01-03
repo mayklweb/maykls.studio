@@ -44,7 +44,7 @@ function Header() {
       gsap.fromTo(
         itemsRef.current,
         { y: 100 },
-        { y: 0, stagger: 0.08, duration: 0.8, ease: "power4.out" }
+        { y: 0, stagger: 0.08, duration: 0.6, ease: "power4.out" }
       );
     } else {
       gsap.to(dropdown, {
@@ -64,7 +64,7 @@ function Header() {
         y: 100,
         stagger: 0.1,
         duration: 0.4,
-        ease: "power4.out",
+        ease: "power4.inOut",
       });
     }
   }, [menu]);
