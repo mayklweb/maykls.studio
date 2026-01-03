@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Instrument_Sans, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { Header } from "./widgets";
-import ScrollProvider from "./context/ScrollContext";
 import ReactLenis from "lenis/react";
+import AppProvider from "./context/AppContext";
+import LayoutClient from "./layout-client.tsx";
 
 const instrumentSans = Instrument_Sans({
   variable: "--font-instrument-sans",
@@ -36,11 +37,13 @@ export default function RootLayout({
       <body
         className={`${instrumentSans.variable} ${instrumentSerif.variable} antialiased`}
       >
-        {/* <ScrollProvider> */}
-          <ReactLenis root  />
-          <Header />
-          {children}
-        {/* </ScrollProvider> */}
+        <AppProvider>
+          <LayoutClient>
+            <ReactLenis root />
+            <Header />
+            {children}
+          </LayoutClient>
+        </AppProvider>
       </body>
     </html>
   );

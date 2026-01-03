@@ -6,7 +6,13 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-function Projects({ props, ref }: { props?: any; ref?: React.ForwardedRef<HTMLElement> }) {
+function Projects({
+  props,
+  ref,
+}: {
+  props?: any;
+  ref?: React.ForwardedRef<HTMLElement>;
+}) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const maskRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
@@ -71,8 +77,9 @@ function Projects({ props, ref }: { props?: any; ref?: React.ForwardedRef<HTMLEl
             <Image
               src="/about.avif"
               alt=""
-              fill
-              className="object-cover"
+              width={1920}
+              height={1080}
+              className="w-full h-full object-cover"
               priority
             />
           </div>

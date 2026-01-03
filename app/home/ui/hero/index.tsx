@@ -1,10 +1,8 @@
 import { useRef, useEffect, useState } from "react";
-import { useScrollContext } from "@/app/context/ScrollContext";
 
 function Hero() {
   const heroRef = useRef<HTMLDivElement | null>(null);
   const [heroHeight, setHeroHeight] = useState(0);
-  const { scrollY } = useScrollContext();
 
   useEffect(() => {
     if (heroRef.current) {
@@ -12,11 +10,11 @@ function Hero() {
     }
   }, []);
 
-  useEffect(() => {
-    if (scrollY > heroHeight - 80) {
-      console.log("hero chiqib ketdi");
-    }
-  }, [scrollY, heroHeight]);
+  // useEffect(() => {
+  //   if (scrollY > heroHeight - 80) {
+  //     console.log("hero chiqib ketdi");
+  //   }
+  // }, [scrollY, heroHeight]);
 
   const svgPattern = `
 <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27">

@@ -4,6 +4,8 @@ import Link from "next/link";
 import { AnchorHTMLAttributes, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
+import { useRouter } from "next/navigation";
+import { useAppContext } from "@/app/context/AppContext";
 
 function Header() {
   const [menu, setMenu] = useState(false);
@@ -73,6 +75,17 @@ function Header() {
     { href: "/about", label: "About" },
   ];
 
+  const router = useRouter();
+  const { playTransition } = useAppContext();
+
+  const handleClick = (href: string) => {
+    setMenu(false);
+
+    playTransition(() => {
+      router.push(href);
+    });
+  };
+
   return (
     <header
       onMouseEnter={() => setMenu(true)}
@@ -84,8 +97,14 @@ function Header() {
           <Image src="/maykls.italic.svg" width={60} height={26} alt="Logo" />
         </Link>
 
-        <button className="cursor-pointer" onClick={toggleMenu}>
-          <Image src="/menu.svg" width={20} height={8} alt="Menu" />
+        <button className="w-5 h-2 ursor-pointer" onClick={toggleMenu}>
+          <Image
+            src="/menu.svg"
+            width={20}
+            height={8}
+            className="w-full h-full object-cover"
+            alt="Menu"
+          />
         </button>
       </div>
 
@@ -101,6 +120,7 @@ function Header() {
                 ref={(el) => {
                   if (el) itemsRef.current[i] = el;
                 }}
+                onClick={() => handleClick(item.href)}
                 className="italic tracking-tight flex gap-2 w-full group overflow-hidden "
                 href={item.href}
               >

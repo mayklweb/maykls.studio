@@ -1,14 +1,14 @@
 "use client";
 import gsap from "gsap";
 import Link from "next/link";
-import { useScrollContext } from "@/app/context/ScrollContext";
+import { useScrollContext } from "@/app/context/AppContext";
 import { useEffect, useRef } from "react";
 
 function MenuModal() {
   const { menu } = useScrollContext();
   const containerRef = useRef<HTMLDivElement | null>(null);
   const itemsRef = useRef<(HTMLAnchorElement | null)[]>([]);
-  
+
   useEffect(() => {
     if (menu && containerRef.current) {
       gsap.fromTo(
