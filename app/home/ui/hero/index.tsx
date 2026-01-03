@@ -10,11 +10,11 @@ function Hero() {
     }
   }, []);
 
-  // useEffect(() => {
-  //   if (scrollY > heroHeight - 80) {
-  //     console.log("hero chiqib ketdi");
-  //   }
-  // }, [scrollY, heroHeight]);
+  useEffect(() => {
+    if (scrollY > heroHeight - 80) {
+      console.log("hero chiqib ketdi");
+    }
+  }, [scrollY, heroHeight]);
 
   const svgPattern = `
 <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27">
@@ -25,7 +25,7 @@ function Hero() {
 
   return (
     <>
-      <section className="relative top-0 left-0 w-full h-screen overflow-hidden">
+      <section className="relative top-0 left-0 w-full h-screen ">
         <div
           className="w-full h-full"
           style={{
@@ -34,15 +34,15 @@ function Hero() {
               svgPattern
             )}")`,
           }}
-        > 
-          <div className=" w-full h-full flex items-center justify-center">
-            {/* <h1 className="text-[256px] tracking-tighter">
+        >
+          <div className=" w-full h-full flex items-end justify-center">
+            <h1 className="text-[336px] tracking-tighter leading-[0.66]">
               <span className="font-serif">maykl</span>
               <span className="font-serif italic">s</span>
               <span className="font-sans tracking-[-20px]">tudio</span>
-            </h1> */}
-            <h1 className="font-serif text-[256px] tracking-tight">maykl§</h1>
-            <h1 className="text-[256px] tracking-tighter">tudio</h1>
+            </h1>
+            {/* <h1 className="font-serif text-[256px] tracking-tight">maykl§</h1>
+            <h1 className="text-[256px] tracking-tighter">tudio</h1> */}
           </div>
 
           {/* <div className="w-full h-full flex items-center justify-evenly bg-[#fbfbfb]">
@@ -51,7 +51,7 @@ function Hero() {
             <div className="h-full border-l-[0.5px] border-[#002DDA] border-solid"></div>
             <div className="h-full border-l-[0.5px] border-[#002DDA] border-solid"></div>
             <div className="h-full border-l-[0.5px] border-[#002DDA] border-solid"></div>
-            </div> */}
+          </div> */}
         </div>
       </section>
     </>
