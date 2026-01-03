@@ -27,7 +27,7 @@ function Projects({
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: wrapper,
-        start: "top 80%",
+        start: "top 60%",
         toggleActions: "play none none none",
       },
     });
@@ -40,7 +40,7 @@ function Projects({
       },
       {
         clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-        duration: 1.2,
+        duration: 1.4,
         ease: "power4.out",
       }
     );
@@ -53,7 +53,7 @@ function Projects({
       },
       {
         clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-        duration: 1.2,
+        duration: 1.4,
         ease: "power4.out",
       },
       "<=0.2" // overlap for smooth cinematic effect

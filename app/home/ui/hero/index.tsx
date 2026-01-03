@@ -18,11 +18,11 @@ function Hero() {
             )}")`,
           }}
         >
-          <div className=" w-full h-full flex items-end justify-center">
-            <h1 className="text-[336px] tracking-tighter leading-[0.66]">
+          <div className=" w-full h-full flex items-start lg:items-end justify-center">
+            <h1 className="text-[92px] lg:text-[336px] tracking-tighter leading-[0.66]">
               <span className="font-serif">maykl</span>
               <span className="font-serif italic">s</span>
-              <span className="font-sans tracking-[-20px]">tudio</span>
+              <span className="font-sans tracking-tighter lg:tracking-[-20px]">tudio</span>
             </h1>
             {/* <h1 className="font-serif text-[256px] tracking-tight">maykl§</h1>
             <h1 className="text-[256px] tracking-tighter">tudio</h1> */}

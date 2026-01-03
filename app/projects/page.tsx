@@ -1,7 +1,7 @@
 function Projects() {
   return (
     <section>
-      <h1 className="text-9xl tracking-tighter">Projects</h1>
+      <h1 className="text-6xl text-center tracking-tighter font-serif">Projects</h1>
     </section>
   );
 }

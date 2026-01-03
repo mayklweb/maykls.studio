@@ -1,7 +1,7 @@
 function About() {
   return (
     <section>
-      <h1 className="text-9xl text-center tracking-tighter">About</h1>
+      <h1 className="text-6xl text-center tracking-tighter font-serif">About</h1>
     </section>
   );
 }
