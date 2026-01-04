@@ -32,11 +32,15 @@ function Hero() {
 
           <div className="w-full h-full absolute top-0 left-0">
             <div className="relative top-0 left-0 w-full h-full flex">
-              <div className="absolute top-1/2 lg:top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:-translate-y-1/3">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                 <p className="font-serif   tracking-tight">
-                  <span className="text-7xl italic tracking-tight">turning</span>
+                  <span className="text-7xl italic tracking-tight">
+                    turning
+                  </span>
                   <br />
-                  <span className="text-6xl italic tracking-tight">ideas into</span>
+                  <span className="text-6xl italic tracking-tight">
+                    ideas into
+                  </span>
                   <br />
                   <span className="text-[140px] leading-[0.9]">ART</span>
                 </p>
