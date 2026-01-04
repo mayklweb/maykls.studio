@@ -72,7 +72,6 @@ export default function RootLayout({
       >
         <AppProvider>
           <LayoutClient>
-            <ReactLenis root />
             <Header />
             {children}
           </LayoutClient>

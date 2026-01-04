@@ -56,11 +56,6 @@ export default function AppProvider({
 
   return (
     <AppContext.Provider value={{ playTransition, reveal }}>
-      {/* <div
-        ref={overlayRef}
-        className="fixed inset-0 bg-[#002BBA] z-9999 -translate-y-full"
-        style={{ transform: "translateY(-100%)" }}
-      /> */}
       {children}
     </AppContext.Provider>
   );

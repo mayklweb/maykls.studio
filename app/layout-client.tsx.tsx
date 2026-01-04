@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAppContext } from "./context/AppContext";
+import ReactLenis from "lenis/react";
 
 export default function LayoutClient({
   children,
@@ -14,5 +15,10 @@ export default function LayoutClient({
     reveal();
   }, []);
 
-  return <>{children}</>;
+  return (
+    <>
+      <ReactLenis root />
+      {children}
+    </>
+  );
 }
