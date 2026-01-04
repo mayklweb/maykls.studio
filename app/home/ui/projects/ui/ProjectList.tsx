@@ -44,7 +44,7 @@ function ProjectList({ project }: { project: ProjectType }) {
         },
         {
           clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-          duration: 1.4,
+          duration: 1.2,
           ease: "power4.out",
         }
       );
@@ -56,7 +56,7 @@ function ProjectList({ project }: { project: ProjectType }) {
         },
         {
           clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-          duration: 1.4,
+          duration: 1.2,
           ease: "power4.out",
         },
         "<=0.2"
@@ -68,7 +68,7 @@ function ProjectList({ project }: { project: ProjectType }) {
         },
         {
           y: 0,
-          duration: 1.4,
+          duration: 1.2,
           stagger: 0.1,
           ease: "power4.out",
         },
