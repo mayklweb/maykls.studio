@@ -103,7 +103,7 @@ function Header() {
     <header
       onMouseEnter={() => isDesktop() && setMenu(true)}
       onMouseLeave={() => isDesktop() && setMenu(false)}
-      className="fixed bottom-0 lg:bottom-auto lg:top-5 left-1/2 -translate-x-1/2 z-50 w-[260px] bg-[#002BBA]/10 backdrop-blur-lg rounded-sm px-2 py-1"
+      className="fixed bottom-5 lg:bottom-auto lg:top-5 left-1/2 -translate-x-1/2 z-50 w-[260px] bg-[#002BBA]/10 backdrop-blur-lg rounded-sm px-2 py-1"
     >
       {/* Mobile dropdown */}
 
@@ -112,18 +112,18 @@ function Header() {
         className="overflow-hidden block visible opacity-100 lg:hidden lg:invisible lg:opacity-0"
         style={{ height: 0 }}
       >
-        <div className="py-2">
+        <div className="py-2 ">
           {menuItems.map((item, i) => (
             <div
               key={i}
-              className=" text-[#002BBA] font-serif font-semibold flex flex-col overflow-hidden"
+              className=" text-[#002BBA] font-serif font-semibold flex flex-col overflow-hidden mix-blend-difference"
             >
               <Link
                 ref={(el) => {
                   el && (mobileItemsRef.current[i] = el);
                 }}
                 onClick={() => handleClick(item.href)}
-                className="italic tracking-tight flex gap-2 w-full group overflow-hidden "
+                className="italic font-semibold tracking-tight flex gap-2 w-full group overflow-hidden "
                 href={item.href}
               >
                 <span className="">({i + 1})</span>
@@ -174,7 +174,7 @@ function Header() {
                 }}
                 href={item.href}
                 onClick={() => handleClick(item.href)}
-                className="italic tracking-tight flex gap-2 w-full group overflow-hidden "
+                className="italic font-semibold tracking-tight flex gap-2 w-full group overflow-hidden "
               >
                 <span>({i + 1})</span>
                 <span className="group-hover:pl-2 group-hover:opacity-50 transition-all duration-500 ease-in-out">
@@ -185,7 +185,7 @@ function Header() {
                 ref={(el) => {
                   el && (desktopLinesRef.current[i] = el);
                 }}
-                className="w-full h-px bg-[#002BBA]"
+                className="w-full h-px bg-[#002BBA]/40"
               />
             </div>
           ))}

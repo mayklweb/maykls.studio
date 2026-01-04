@@ -1,19 +1,5 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "Instrument-Serif";
-  src: url("/fonts/InstrumentSerif.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Instrument-Sans";
-  src: url("/fonts/InstrumentSans.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-
 :root {
   --background: #fbfbfb;
   --foreground: #002bba;
@@ -30,18 +16,14 @@ html,
 body {
   width: 100%;
   height: 100%;
-  /* overflow: hidden; */
   background: var(--background);
   color: var(--foreground);
-  font-family: "Instrument Sans", sans-serif;
+  font-family: var(--font-instrument-sans);
 }
 
-::selection {
-  color: white;
-  background: black;
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0px auto;
+  padding: 0px 20px;
 }
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
