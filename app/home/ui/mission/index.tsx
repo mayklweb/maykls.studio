@@ -6,46 +6,58 @@ gsap.registerPlugin(ScrollTrigger);
 function Mission() {
   return (
     <section>
-      <div className="mt-10 lg:mt-20 flex flex-col">
-        <div className="p-5 lg:p-10 grid grid-cols-1 lg:grid-cols-2">
-          <div className="w-2/3 flex items-start">
-            <div className="w-full flex items-center justify-between">
-              <h1 className="text-5xl lg:text-6xl font-serif font-semibold">
-                Mission
-              </h1>
-              <p className="text-sm tracking-tight hidden lg:block">
-                What is
-                <br />
-                <span className="font-serif">maykls</span>.studio ?
-              </p>
+      <div className="relative">
+        <div className="pt-10 lg:pt-20 flex flex-col">
+          <div className="p-5 lg:p-10 grid grid-cols-1 lg:grid-cols-2">
+            <div className="w-2/3 flex items-start">
+              <div className="w-full flex items-center justify-between">
+                <h1 className="text-5xl lg:text-6xl font-serif font-semibold">
+                  Mission
+                </h1>
+                <p className="text-sm tracking-tight hidden lg:block">
+                  What is
+                  <br />
+                  <span className="font-serif">maykls</span>.studio ?
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center justify-end">
+              <div className="lg:w-4/5 mt-5">
+                <p className="text-2xl lg:text-3xl tracking-tight font-medium leading-[120%] text-justify">
+                  <span className="lg:pl-20">At </span>
+                  <span className="font-serif tracking-tight font-semibold">
+                    maykls
+                  </span>
+                  .<span className="font-sans tracking-tighter">studio</span>,
+                  we’re on the mission to create websites and brand design that
+                  spark excitement – just like a Grand Slam Tennis match.
+                  Partnering with exceptional brands that share our ambition for
+                  good design. It’s not just about your
+                  <span className="font-serif tracking-tight italic">
+                    {" "}
+                    website
+                  </span>
+                  . It’s about game, set, and match for your brand.
+                </p>
+              </div>
             </div>
           </div>
-          <div className="flex items-center justify-end">
-            <div className="lg:w-4/5 mt-5">
-              <p className="text-2xl lg:text-3xl tracking-tight font-medium leading-[120%] text-justify">
-                <span className="lg:pl-20">At </span>
-                <span className="font-serif tracking-tight font-semibold">
-                  maykls
-                </span>
-                .<span className="font-sans tracking-tighter">studio</span>,
-                we’re on the mission to create websites and brand design that
-                spark excitement – just like a Grand Slam Tennis match.
-                Partnering with exceptional brands that share our ambition for
-                good design. It’s not just about your
-                <span className="font-serif tracking-tight italic">
-                  {" "}
-                  website
-                </span>
-                . It’s about game, set, and match for your brand.
-              </p>
-            </div>
+          <div className="flex items-center justify-center w-full h-full pr-[2%]">
+            <h1 className="big-title text-[43vw] italic leading-[80%] font-serif tracking-tighter text-center">
+              maykls
+            </h1>
           </div>
         </div>
-        <div className="flex items-center justify-center w-full h-full pr-[2%]">
-          <h1 className="big-title text-[43vw] italic leading-[80%] font-serif tracking-tighter text-center">
-            maykls
-          </h1>
-        </div>
+        {/* <div className="w-full h-full absolute top-0 left-0">
+          <div className="w-full h-full flex items-center justify-evenly">
+            <div className="h-full border-l-[0.5px] border-[#002DDA] border-solid"></div>
+            <div className="h-full border-l-[0.5px] border-[#002DDA] border-solid"></div>
+            <div className="h-full border-l-[0.5px] border-[#002DDA] border-solid"></div>
+            <div className="h-full border-l-[0.5px] border-[#002DDA] border-solid"></div>
+            <div className="h-full border-l-[0.5px] border-[#002DDA] border-solid"></div>
+            <div className="h-full border-l-[0.5px] border-[#002DDA] border-solid"></div>
+          </div>
+        </div> */}
       </div>
     </section>
   );

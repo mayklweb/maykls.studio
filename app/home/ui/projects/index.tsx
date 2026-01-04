@@ -1,62 +1,34 @@
-import ProjectList from "./ui/ProjectList";
+import ProjectsGrid from "./ui/ProjectsGrid";
+import ProjectsList from "./ui/ProjectsList";
 
 function Projects() {
-  const projects = [
-    {
-      id: 1,
-      img: "/about.avif",
-      title: "Bunyod Optom",
-      label: "Web Site",
-    },
-    {
-      id: 2,
-      img: "/about.avif",
-      title: "Bunyod Optom",
-      label: "Web Site",
-    },
-    {
-      id: 3,
-      img: "/about.avif",
-      title: "Bunyod Optom",
-      label: "Web Site",
-    },
-    {
-      id: 4,
-      img: "/about.avif",
-      title: "Bunyod Optom",
-      label: "Web Site",
-    },
-    {
-      id: 5,
-      img: "/about.avif",
-      title: "Bunyod Optom",
-      label: "Web Site",
-    },
-  ];
+  const screen = window.innerWidth;
 
   return (
-    <section className=" mt-20">
-      <div className="w-full h-full text-[#002BBA]">
-        <div className="w-full p-5 lg:p-10 flex items-start justify-between flex-col lg:flex-row  lg:items-center gap-4">
-          <h1 className="text-6xl font-serif font-semibold tracking-tight">
-            Selected work <sup>(03)</sup>
-          </h1>
-          <p className="text-2xl tracking-tighter">
-            We helped more than 70+ brands,
-            <br />
-            start-ups and agencies to level up
-            <br />
-            their
-            <span className="font-serif italic tracking-tight"> website </span>
-            game!
-          </p>
-        </div>
-      </div>
+    <section className="">
       <div className="container">
-        <div className="w-full flex flex-col items-center justify-center gap-5 overflow-hidden">
-          {projects.map((project) => (
-            <ProjectList key={project.id} project={project} />
-          ))}
+        <div className="w-full h-full  mt-20">
+          <div className="w-full py-5 lg:py-10 flex items-start justify-between flex-col lg:flex-row  lg:items-center gap-4">
+            <h1 className="text-6xl text-[#002BBA] font-serif font-semibold tracking-tight">
+              Selected work <sup>(03)</sup>
+            </h1>
+            <p className="text-2xl text-[#002BBA] tracking-tighter">
+              We helped more than 70+ brands,
+              <br />
+              start-ups and agencies to level up
+              <br />
+              their
+              <span className="font-serif italic tracking-tight">
+                {" "}
+                website{" "}
+              </span>
+              game!
+            </p>
+          </div>
+        </div>
+
+        <div className="w-full ">
+          {screen > 768 ? <ProjectsList /> : <ProjectsGrid />}
         </div>
       </div>
     </section>
