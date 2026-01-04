@@ -20,7 +20,7 @@ function Projects() {
   return (
     <section className="">
       <div className="container">
-        <div className="w-full h-full  mt-20">
+        <div className="w-full h-full mt-10 lg:mt-20">
           <div className="w-full py-5 lg:py-10 flex items-start justify-between flex-col lg:flex-row  lg:items-center gap-4">
             <h1 className="text-6xl text-[#002BBA] font-serif font-semibold tracking-tight">
               Selected work <sup>(03)</sup>

@@ -2,7 +2,7 @@ export default function Process() {
   return (
     <section>
       <div className="mt-10 lg:mt-20">
-        <div className="flex items-center justify-center w-full h-full pr-[2%]">
+        <div className="flex items-center justify-center w-full h-full">
           <h1 className="text-[50vw] italic leading-[80%] font-serif tracking-tighter text-center">
             studio
           </h1>

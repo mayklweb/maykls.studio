@@ -32,18 +32,18 @@ const projects = [
     title: "Bunyod Optom",
     label: "Web Site",
   },
-  {
-    id: 4,
-    img: "/about.avif",
-    title: "Bunyod Optom",
-    label: "Web Site",
-  },
-  {
-    id: 5,
-    img: "/about.avif",
-    title: "Bunyod Optom",
-    label: "Web Site",
-  },
+  // {
+  //   id: 4,
+  //   img: "/about.avif",
+  //   title: "Bunyod Optom",
+  //   label: "Web Site",
+  // },
+  // {
+  //   id: 5,
+  //   img: "/about.avif",
+  //   title: "Bunyod Optom",
+  //   label: "Web Site",
+  // },
 ];
 
 function ProjectsGrid() {
@@ -97,7 +97,7 @@ function ProjectsGrid() {
       tl.fromTo(
         [title, label],
         {
-          y: -50,
+          y: 50,
         },
         {
           y: 0,
