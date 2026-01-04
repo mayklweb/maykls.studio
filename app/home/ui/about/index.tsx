@@ -13,8 +13,8 @@ export default function About() {
             <Image
               src={"/about.avif"}
               alt=""
-              width={1980}
-              height={1080}
+              width={1980/2}
+              height={1080/2}
               className="w-full h-full object-cover"
               priority
             />
