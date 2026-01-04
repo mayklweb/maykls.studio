@@ -135,6 +135,7 @@ export default function About() {
               width={1980}
               height={1080}
               className="w-full h-full object-cover"
+              priority
             />
           </div>
           <div className="w-full h-full flex items-end justify-end absolute top-0 left-0 p-10">
