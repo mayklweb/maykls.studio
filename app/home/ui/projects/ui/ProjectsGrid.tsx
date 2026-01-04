@@ -112,13 +112,13 @@ function ProjectsGrid() {
     return () => ScrollTrigger.getAll().forEach((t) => t.kill());
   }, []);
   return (
-    <div>
+    <div >
       {projects.map(({id, img, title, label }, i) => (
         <div key={id}
           ref={(el) => {
             if (el) wrapperRefs.current[i] = el;
           }}
-          className="w-full h-full "
+          className="w-full h-full mt-5"
         >
           <div className="relative rounded-sm overflow-hidden">
             <div
