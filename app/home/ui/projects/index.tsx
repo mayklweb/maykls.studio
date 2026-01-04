@@ -1,8 +1,21 @@
+import { useEffect, useState } from "react";
 import ProjectsGrid from "./ui/ProjectsGrid";
 import ProjectsList from "./ui/ProjectsList";
 
 function Projects() {
-  const screen = window.innerWidth;
+  const [screen, setScreen] = useState<number | null>(null);
+
+  useEffect(() => {
+    const updateScreen = () => setScreen(window.innerWidth);
+
+    updateScreen(); // set initial value after mount
+    window.addEventListener("resize", updateScreen);
+
+    return () => window.removeEventListener("resize", updateScreen);
+  }, []);
+
+  // Prevent hydration mismatch
+  if (screen === null) return null;
 
   return (
     <section className="">
