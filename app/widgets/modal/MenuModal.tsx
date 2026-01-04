@@ -1,8 +1,5 @@
 "use client";
 
-function MenuModal() {
-
-
-}
+function MenuModal() {}
 
 export default MenuModal;
