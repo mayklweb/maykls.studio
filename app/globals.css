@@ -27,3 +27,64 @@ body {
   margin: 0px auto;
   padding: 0px 20px;
 }
+
+.progressive-blur-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transform: rotate(180deg);
+  z-index: 98;
+  height: 60px;
+}
+
+
+.progressive-blur-container>.blur-filter:first-child {
+  backdrop-filter: blur(1px);
+  mask: linear-gradient(transparent, #000 10%, #000 30%, transparent 40%);
+}
+
+.progressive-blur-container>.blur-filter:nth-child(2) {
+  backdrop-filter: blur(2px);
+  mask: linear-gradient(transparent 10%, #000 20%, #000 40%, transparent 50%);
+}
+
+.progressive-blur-container>.blur-filter:nth-child(3) {
+  backdrop-filter: blur(4px);
+  mask: linear-gradient(transparent 15%, #000 30%, #000 50%, transparent 60%);
+}
+
+.progressive-blur-container>.blur-filter:nth-child(4) {
+  backdrop-filter: blur(8px);
+  mask: linear-gradient(transparent 20%, #000 40%, #000 60%, transparent 70%);
+}
+
+.progressive-blur-container>.blur-filter:nth-child(5) {
+  backdrop-filter: blur(12px);
+  mask: linear-gradient(transparent 40%, #000 60%, #000 80%, transparent 90%);
+}
+
+.progressive-blur-container>.blur-filter:nth-child(6) {
+  backdrop-filter: blur(16px);
+  mask: linear-gradient(transparent 60%, #000 80%);
+}
+
+.progressive-blur-container>.blur-filter:nth-child(7) {
+  z-index: 10;
+  backdrop-filter: blur(16px);
+  mask: linear-gradient(transparent 70%, #000);
+}
+
+.progressive-blur-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.blur-filter {
+  position: absolute;
+  inset: 0;
+  opacity: 1;
+}
