@@ -1,43 +1,75 @@
-import Image from "next/image";
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const paragraph =
+  "Oddiy is an independent design and development studio focused on creating thoughtful websites and digital products. We combine purposeful design with modern technology to turn ideas into clear, functional, and meaningful digital experiences. From the first concept to the final details, we approach every project with curiosity, precision, and a commitment to simplicity. Our goal is to make digital experiences that not only look good, but work beautifully for the people who use them.";
+
+// Effekt: so'zlar SCROLL POZITSIYASIGA qarab (scrub kabi) asta-sekin
+// ochiladi — lekin faqat OLDINGA tomon. Yuqoriga qaytib scroll qilsangiz,
+// eng yuqori yetgan progress saqlanib qoladi va so'zlar YOPILMAYDI.
 
 export default function About() {
-  return (
-    <section>
-      <div>
-        <div>
-          <h1>About</h1>
-        </div>
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const wordsRef = useRef<Array<HTMLSpanElement>>([]);
 
-        <div className="relative">
-          <div className="w-full h-screen">
-            <Image
-              src={"/about.avif"}
-              alt=""
-              width={1980/2}
-              height={1080/2}
-              className="w-full h-full object-cover"
-              priority
-            />
-          </div>
-          <div className="w-full h-full flex items-end justify-end absolute top-0 left-0 p-10">
-            <div className="w-full border-t border-[#FBFBFB] flex items-start justify-between pt-5">
-              <div>
-                <h1 className="text-[#FBFBFB] text-6xl  tracking-tight">
-                  <span className="font-snas italic">Were</span>{" "}
-                  <span className="font-serif">maykls</span>.studio
-                </h1>
-              </div>
-              <div className="lg:w-[40%] hidden">
-                <p className="text-[#FBFBFB] text-3xl font-medium tracking-tight">
-                  <span className="pl-20">A</span> creative boutique studio
-                  crafting exceptional
-                  <span className="font-serif italic"> websites</span> with
-                  sharp messaging, award-winning design, and smooth animations.
-                  All delivered with the precision, passion, and dedication of a
-                  Grand Slam Tennis match.
-                </p>
-              </div>
-            </div>
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.set(wordsRef.current, { opacity: 0, filter: "blur(6px)" });
+
+      // Pauza qilingan timeline — bu yerda hech narsa avtomatik ishlamaydi,
+      // progress'ni o'zimiz qo'lda boshqaramiz
+      const tl = gsap.timeline({ paused: true }).to(wordsRef.current, {
+        opacity: 1,
+        filter: "blur(0px)",
+        stagger: 0.04,
+        ease: "none",
+      });
+
+      let maxProgress = 0;
+
+      ScrollTrigger.create({
+        trigger: wrapRef.current,
+        start: "top 90%",
+        end: "bottom 70%",
+        onUpdate: (self) => {
+          // faqat progress OLDINGA (kattaroq) bo'lsa yangilaymiz
+          maxProgress = Math.max(maxProgress, self.progress);
+          tl.progress(maxProgress);
+        },
+      });
+    }, wrapRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  const words = paragraph.split(" ");
+
+  return (
+    <section className="w-full h-full py-20">
+      <div className="container">
+        <div>
+          <p className="">Creative Development Studio</p>
+
+          <div className="mt-20" ref={wrapRef}>
+            <p className="text-[44px] font-syne tracking-tight leading-[120%]">
+              {words.map((word, i) => (
+                <span key={i}>
+                  <span
+                    ref={(el) => {
+                      if (el) wordsRef.current[i] = el;
+                    }}
+                    className="inline-block text-[#0000ff]"
+                  >
+                    {word}
+                  </span>{" "}
+                </span>
+              ))}
+            </p>
           </div>
         </div>
       </div>

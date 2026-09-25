@@ -1,12 +1,15 @@
 "use client";
-import { useEffect, useRef } from "react";
-import { About, Contact, Hero, Mission, Process, Projects } from "./ui";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import {
+  About,
+  Contact,
+  Hero,
+  Mission,
+  Process,
+  Projects,
+  Services,
+} from "./ui";
 
 function App() {
-  const sec2Ref = useRef<HTMLDivElement>(null);
-
   // useEffect(() => {
   //   if (!sec2Ref.current) return;
 
@@ -44,11 +47,12 @@ function App() {
   return (
     <>
       <Hero />
-      <Mission />
-      <Projects  />
-      <Process />
       <About />
-      <Contact />
+      <Projects />
+      <Services />
+      {/* <Mission /> */}
+      {/* <Process /> */}
+      {/* <Contact /> */}
     </>
   );
 }

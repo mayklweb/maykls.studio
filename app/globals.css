@@ -1,16 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fbfbfb;
-  --foreground: #002bba;
+  --background: #ffffff;
+  --foreground: #0000FF;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-instrument-sans);
-  --font-serif: var(--font-instrument-serif);
+  --font-syne: var(--syne-font);
+  --font-helvetica: var(--helvetica-font);
+  --font-instrument-sans: var(--instrument-sans-font);
+  --font-instrument-serif: var(--instrument-serif-font);
+  --font-averia: var(--averia-font);
+  --font-outfit: var(--outfit-font);
 }
+
 
 html,
 body {
@@ -18,7 +23,7 @@ body {
   height: 100%;
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-instrument-sans);
+  font-family: var(--helvetica-font);
 }
 
 .container {
@@ -41,42 +46,6 @@ body {
 }
 
 
-.progressive-blur-container>.blur-filter:first-child {
-  backdrop-filter: blur(1px);
-  mask: linear-gradient(transparent, #000 10%, #000 30%, transparent 40%);
-}
-
-.progressive-blur-container>.blur-filter:nth-child(2) {
-  backdrop-filter: blur(2px);
-  mask: linear-gradient(transparent 10%, #000 20%, #000 40%, transparent 50%);
-}
-
-.progressive-blur-container>.blur-filter:nth-child(3) {
-  backdrop-filter: blur(4px);
-  mask: linear-gradient(transparent 15%, #000 30%, #000 50%, transparent 60%);
-}
-
-.progressive-blur-container>.blur-filter:nth-child(4) {
-  backdrop-filter: blur(8px);
-  mask: linear-gradient(transparent 20%, #000 40%, #000 60%, transparent 70%);
-}
-
-.progressive-blur-container>.blur-filter:nth-child(5) {
-  backdrop-filter: blur(12px);
-  mask: linear-gradient(transparent 40%, #000 60%, #000 80%, transparent 90%);
-}
-
-.progressive-blur-container>.blur-filter:nth-child(6) {
-  backdrop-filter: blur(16px);
-  mask: linear-gradient(transparent 60%, #000 80%);
-}
-
-.progressive-blur-container>.blur-filter:nth-child(7) {
-  z-index: 10;
-  backdrop-filter: blur(16px);
-  mask: linear-gradient(transparent 70%, #000);
-}
-
 .progressive-blur-container {
   position: absolute;
   inset: 0;
@@ -87,4 +56,48 @@ body {
   position: absolute;
   inset: 0;
   opacity: 1;
+}
+
+
+.bg-blur-gradient {
+  position: relative;
+  isolation: isolate;
+  background: transparent;
+}
+
+.bg-blur-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(255, 255, 255, 0.45) 60%,
+      rgba(255, 255, 255, 0) 100%);
+
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+
+  mask-image: linear-gradient(to bottom,
+      black 0%,
+      black 55%,
+      transparent 100%);
+
+  -webkit-mask-image: linear-gradient(to bottom,
+      black 0%,
+      black 55%,
+      transparent 100%);
+}
+
+.bg-blur-button {
+  background: rgba(240, 240, 240, 0.55);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.progressive-blur>div {
+  -webkit-backdrop-filter: var(--blur-value);
+  -webkit-mask: var(--mask-value);
 }

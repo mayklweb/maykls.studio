@@ -4,5 +4,6 @@ import Mission from "./mission";
 import Process from "./process";
 import Projects from "./projects";
 import Hero from "./hero";
+import Services from "./services";
 
-export { Mission, Process, Projects, About, Contact, Hero };
+export { Services, Mission, Process, Projects, About, Contact, Hero };
