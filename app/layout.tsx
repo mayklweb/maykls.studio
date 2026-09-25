@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-// @ts-expect-error CSS imports are handled by Next.js and are not covered by app-level TS declarations.
 import "./globals.css";
 import { Header } from "./widgets";
 import AppProvider from "./context/AppContext";
